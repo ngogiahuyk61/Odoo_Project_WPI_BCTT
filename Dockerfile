@@ -1,17 +1,19 @@
-# Dùng image chính thức của Odoo phiên bản 17.0
+# Sử dụng image chính thức của Odoo 17.0
 FROM odoo:17.0
 
-# Đặt thư mục làm việc (không bắt buộc)
+# Thiết lập thư mục làm việc
 WORKDIR /var/lib/odoo
 
-# Copy thư mục addons tùy chỉnh vào container
+# Copy thư mục addons tùy chỉnh và file cấu hình vào container
 COPY ./addons /mnt/extra-addons
-
-# Copy file cấu hình Odoo vào container
 COPY ./config/odoo.conf /etc/odoo/odoo.conf
 
-# Expose cổng 8069 để Odoo phục vụ web
-EXPOSE 8069
+# Expose cổng được Render cung cấp qua biến môi trường PORT
+EXPOSE $PORT
 
-# Chạy Odoo với chế độ dev
-CMD ["odoo", "--dev", "all"]
+# Chạy Odoo:
+# - "-i base" buộc cài đặt module cơ bản nếu cơ sở dữ liệu chưa được khởi tạo
+# - "--xmlrpc-port ${PORT}" sử dụng cổng từ biến môi trường PORT
+CMD ["odoo", "-i", "base", "--xmlrpc-port", "${PORT}", "--dev", "all"]
+
+
