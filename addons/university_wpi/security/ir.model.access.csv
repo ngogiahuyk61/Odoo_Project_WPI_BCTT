@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_blog_post,access_blog_post,model_blog_post,base.group_user,1,1,1,1
+access_event_event,access_event_event,model_event_event,base.group_user,1,1,1,1
+access_about_about,access_about_about,model_about_about,base.group_user,1,1,1,1
+access_contact_request,access_contact_request,model_contact_request,base.group_user,1,1,1,1
+access_crm_customer,access_crm_customer,model_crm_customer,base.group_user,1,1,1,1
+access_web30s_order,access_web30s_order,model_web30s_order,base.group_user,1,1,1,1
+access_payment_transaction,access_payment_transaction,model_payment_transaction,base.group_user,1,1,1,1
