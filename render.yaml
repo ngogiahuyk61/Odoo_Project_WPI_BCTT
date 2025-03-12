@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: odoo-web
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: HOST
+        value: "db"
+      - key: USER
+        value: "odoo"
+      - key: PORT
+        value: "5432"
+      - key: PASSWORD
+        value: "odoo"
