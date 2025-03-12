@@ -14,6 +14,7 @@ EXPOSE $PORT
 # Chạy Odoo:
 # - "-i base" buộc cài đặt module cơ bản nếu cơ sở dữ liệu chưa được khởi tạo
 # - "--xmlrpc-port ${PORT}" sử dụng cổng từ biến môi trường PORT
-CMD ["odoo", "-i", "base", "--xmlrpc-port", "${PORT}", "--dev", "all"]
+CMD ["sh", "-c", "odoo -i base --xmlrpc-port ${PORT} --dev all"]
+
 
 
