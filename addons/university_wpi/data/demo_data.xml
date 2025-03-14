@@ -1,6 +1,7 @@
 <!-- university_wpi/data/demo_data.xml -->
 <odoo noupdate="1">
   <!-- Tạo tài khoản admin -->
+    <!-- Tạo tài khoản admin -->
   <record id="base.user_admin" model="res.users">
     <field name="name">Administrator</field>
     <field name="login">admin</field>
